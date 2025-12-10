@@ -1,0 +1,42 @@
+__pycache__/
+*.py[cod]
+*.so
+*.dll
+*.dylib
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs / temp
+*.log
+*.tmp
+*.cache/
+.cache/
+
+# Model weights / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.h5
+
+# WandB artifacts
+wandb/
+
+# Experiment artifacts / results / runs
+**/results/**
+**/result/**
+**/checkpoints/**
+**/runs/**
+**/logs/**
+
+# OS files
+.DS_Store
+
+
