@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI STT Demonstration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+    <main class="container">
+        <header>
+            <h1>AI Speech-to-Text <span class="accent">System</span></h1>
+            <p class="subtitle">Speech to Text Live service Demo</p>
+        </header>
+
+        <section class="demo-grid">
+            <div class="video-card">
+                <div class="card-header">
+                    <span class="status-indicator" id="camera-status"></span>
+                    <h3>Live Feed</h3>
+                </div>
+                <div class="video-wrapper">
+                    <video id="webcam" autoplay muted playsinline></video>
+                    <div class="recording-overlay" id="recording-overlay">
+                        <div class="pulse"></div>
+                        <span>REC</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transcription-card">
+                <div class="card-header">
+                    <h3>Transcription</h3>
+                </div>
+                <div class="transcription-content" id="transcription-text">
+                    <p class="placeholder">Speak something to see the result here...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="record-btn" class="btn-primary">
+                <div class="btn-content">
+                    <span class="btn-icon"></span>
+                    <span class="btn-text">Start Recording</span>
+                </div>
+            </button>
+            <div class="processing-status" id="processing-status">
+                <div class="spinner"></div>
+                <span>Processing...</span>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

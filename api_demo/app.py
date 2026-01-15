@@ -36,7 +36,7 @@ from fastapi import FastAPI, UploadFile, File
 from model_loader import get_model
 import torch
 import io
-import re
+import re, time
 
 app = FastAPI()
 model, processor = get_model()
@@ -47,6 +47,7 @@ torchaudio.set_audio_backend("ffmpeg")
 @app.post("/transcribe")
 async def transcribe_audio(file: UploadFile = File(...)):
     # 파일 읽기
+    start_time = time.time()
     file_bytes = await file.read()
     audio_buffer = io.BytesIO(file_bytes)
 
@@ -108,6 +109,9 @@ async def transcribe_audio(file: UploadFile = File(...)):
     
     # 출력 후처리: 불필요한 프리픽스 제거
     result = clean_transcription_output(result)
+
+    end_time = time.time()
+    print(f"Processing Time: {end_time - start_time:.2f}")
 
     return {"transcription": result}
 

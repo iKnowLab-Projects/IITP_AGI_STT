@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI STT Mobile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-overlay"></div>
+    <main class="container">
+        <header>
+            <h1>AI STT <span class="accent">Live</span></h1>
+            <p class="subtitle">Mobile Transcription Service</p>
+        </header>
+
+        <section class="mobile-view">
+            <div class="transcription-card">
+                <div class="card-header">
+                    <div class="status-indicator" id="mic-status"></div>
+                    <h3>Transcription</h3>
+                </div>
+                <div class="transcription-content" id="transcription-text">
+                    <p class="placeholder">마이크 버튼을 눌러 말씀해 보세요. 2초간 침묵하면 자동으로 전사됩니다.</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="recording-visualizer" id="visualizer">
+                    <div class="pulse"></div>
+                </div>
+                <button id="record-btn" class="btn-primary">
+                    <div class="btn-icon"></div>
+                    <span class="btn-text">Start Recording</span>
+                </button>
+
+                <div class="processing-status" id="processing-status">
+                    <div class="spinner"></div>
+                    <span>Processing...</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

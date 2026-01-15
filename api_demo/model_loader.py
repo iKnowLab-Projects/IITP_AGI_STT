@@ -22,7 +22,7 @@ model = Qwen2AudioForConditionalGeneration.from_pretrained(
 )
 
 
-print(f"Loading and merging LoRA adapter from {LORA_ADAPTER_PATH}...")
+#print(f"Loading and merging LoRA adapter from {LORA_ADAPTER_PATH}...")
 model = PeftModel.from_pretrained(model, LORA_ADAPTER_PATH)
 model = model.merge_and_unload() # 메모리 효율성을 위해 모델을 병합하고 원본 어댑터는 언로드
 model.eval() # 모델을 평가 모드로 설정
